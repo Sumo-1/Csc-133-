@@ -1,7 +1,6 @@
 package mechanicsBE;
 
 import java.util.Scanner;
-import java.util.Random;
 
 public class slTTTBoard {
     private final char[][] board = new char[3][3];
@@ -21,7 +20,6 @@ public class slTTTBoard {
         }
     }
 
-    // Reset the board for a new game
     public void resetBoard() {
         initializeBoard();
     }
@@ -46,29 +44,27 @@ public class slTTTBoard {
             playerMarker = scanner.next().toUpperCase().charAt(0);
         }
 
-        computerMarker = (playerMarker == 'X') ? 'O' : 'X'; // Assign the other marker to the computer
-        currentPlayerMarker = playerMarker; // Player starts first
+        computerMarker = (playerMarker == 'X') ? 'O' : 'X';
+        currentPlayerMarker = computerMarker;
     }
 
-    // The main play loop
     public int play() {
         Scanner scanner = new Scanner(System.in);
         while (!isBoardFull() && !checkForWin()) {
             if (currentPlayerMarker == playerMarker) {
                 playerTurn(scanner);
             } else {
-                computerTurn(); // Computer always forces a draw or wins
+                computerTurn();
             }
             printBoard();
 
-            // Check for win after each move and stop the game if someone wins
             if (checkForWin()) {
                 if (currentPlayerMarker == computerMarker) {
                     System.out.println("Computer wins!");
                 } else {
                     System.out.println("Player wins! (This should never happen)");
                 }
-                break; // Stop the game when there's a win
+                break;
             }
 
             switchPlayer();
@@ -77,7 +73,7 @@ public class slTTTBoard {
         if (!checkForWin() && isBoardFull()) {
             System.out.println("It's a draw!");
         }
-        return 0; // Game finished
+        return 0;
     }
 
     private void playerTurn(Scanner scanner) {
@@ -97,64 +93,51 @@ public class slTTTBoard {
     }
 
     private void computerTurn() {
-        System.out.println("Computer's turn.");
-
-        // First: Try to win
-        if (makeWinningMove(computerMarker)) return;
-
-        // Second: Block the player's winning move
-        if (makeWinningMove(playerMarker)) return;
-
-        // Third: Make any available move that leads to a draw
-        playStrategically();
+        int[] bestMove = minimax(0, true);
+        board[bestMove[0]][bestMove[1]] = computerMarker;
+        System.out.println("Computer places at: " + (bestMove[0] + 1) + ", " + (bestMove[1] + 1));
     }
 
-    // Try to make a winning move for the given marker
-    private boolean makeWinningMove(char marker) {
+    private int[] minimax(int depth, boolean isMaximizing) {
+        // Base cases for win/loss/draw
+        if (checkForWin()) {
+            if (currentPlayerMarker == computerMarker) {
+                return new int[]{-1, -1, 10 - depth}; // Computer wins
+            } else {
+                return new int[]{-1, -1, depth - 10}; // Player wins
+            }
+        }
+
+        if (isBoardFull()) {
+            return new int[]{-1, -1, 0}; // Draw
+        }
+
+        int bestScore = isMaximizing ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+        int[] bestMove = {-1, -1, bestScore};
+
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (board[i][j] == '-') {
-                    board[i][j] = marker; // Try the move
-                    if (checkForWin()) {
-                        if (marker == playerMarker) {
-                            board[i][j] = '-'; // Undo the move if it's for blocking player
-                        }
-                        return true; // Move made for win or block
-                    }
-                    board[i][j] = '-'; // Undo the move if it's not winning
-                }
-            }
-        }
-        return false;
-    }
-    // Strategic play: Fill the center first if available, otherwise take a corner
-    private void playStrategically() {
-        // Prioritize center, then corners, then random spots
-        if (board[1][1] == '-') {
-            board[1][1] = computerMarker; // Take center if available
-        } else {
-            // Try to take a corner if available
-            int[][] corners = {{0, 0}, {0, 2}, {2, 0}, {2, 2}};
-            for (int[] corner : corners) {
-                if (board[corner[0]][corner[1]] == '-') {
-                    board[corner[0]][corner[1]] = computerMarker;
-                    return;
-                }
-            }
+                    board[i][j] = isMaximizing ? computerMarker : playerMarker;
+                    int[] score = minimax(depth + 1, !isMaximizing);
+                    board[i][j] = '-'; // Undo move
 
-            // Take any random available spot
-            playRandom();
+                    if (isMaximizing) {
+                        if (score[2] > bestScore) {
+                            bestScore = score[2];
+                            bestMove = new int[]{i, j, bestScore};
+                        }
+                    } else {
+                        if (score[2] < bestScore) {
+                            bestScore = score[2];
+                            bestMove = new int[]{i, j, bestScore};
+                        }
+                    }
+                }
+            }
         }
-    }
-    // Play a random move (fallback option)
-    public void playRandom() {
-        Random rand = new Random();
-        int row, col;
-        do {
-            row = rand.nextInt(3);  // Random row (0-2)
-            col = rand.nextInt(3);  // Random column (0-2)
-        } while (board[row][col] != '-');
-        board[row][col] = computerMarker; // Computer places its marker
+
+        return bestMove;
     }
 
     private boolean isBoardFull() {
