@@ -23,6 +23,8 @@ public class csc133Driver {
         my_board.choosePlayerMarker();
 
         while (GAME_QUIT != game_status) {
+
+
             // Reset the board for a new game
             my_board.resetBoard();
             my_board.printBoard();
