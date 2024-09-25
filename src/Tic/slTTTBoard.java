@@ -95,3 +95,16 @@ public class slTTTBoard {
             }
         }
     }
+
+    private void computerTurn() {
+        System.out.println("Computer's turn.");
+
+        // First: Try to win
+        if (makeWinningMove(computerMarker)) return;
+
+        // Second: Block the player's winning move
+        if (makeWinningMove(playerMarker)) return;
+
+        // Third: Make any available move that leads to a draw
+        playStrategically();
+    }
