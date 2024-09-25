@@ -127,3 +127,22 @@ public class slTTTBoard {
         }
         return false;
     }
+    // Strategic play: Fill the center first if available, otherwise take a corner
+    private void playStrategically() {
+        // Prioritize center, then corners, then random spots
+        if (board[1][1] == '-') {
+            board[1][1] = computerMarker; // Take center if available
+        } else {
+            // Try to take a corner if available
+            int[][] corners = {{0, 0}, {0, 2}, {2, 0}, {2, 2}};
+            for (int[] corner : corners) {
+                if (board[corner[0]][corner[1]] == '-') {
+                    board[corner[0]][corner[1]] = computerMarker;
+                    return;
+                }
+            }
+
+            // Take any random available spot
+            playRandom();
+        }
+    }
