@@ -45,3 +45,26 @@ public class slTTTBoard {
             System.out.println("Invalid marker! Please choose X or O: ");
             playerMarker = scanner.next().toUpperCase().charAt(0);
         }
+
+        computerMarker = (playerMarker == 'X') ? 'O' : 'X'; // Assign the other marker to the computer
+        currentPlayerMarker = playerMarker; // Player starts first
+    }
+
+    // The main play loop
+    public int play() {
+        Scanner scanner = new Scanner(System.in);
+        while (!isBoardFull() && !checkForWin()) {
+            if (currentPlayerMarker == playerMarker) {
+                playerTurn(scanner);
+            } else {
+                computerTurn(); // Computer always forces a draw or wins
+            }
+            printBoard();
+
+            // Check for win after each move and stop the game if someone wins
+            if (checkForWin()) {
+                if (currentPlayerMarker == computerMarker) {
+                    System.out.println("Computer wins!");
+                } else {
+                    System.out.println("Player wins! (This should never happen)");
+                }
