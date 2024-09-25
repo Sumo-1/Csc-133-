@@ -25,3 +25,23 @@ public class slTTTBoard {
     public void resetBoard() {
         initializeBoard();
     }
+
+    public void printBoard() {
+        System.out.println("Current board:");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(board[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void choosePlayerMarker() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Choose your marker (X or O): ");
+        playerMarker = scanner.next().toUpperCase().charAt(0);
+
+        while (playerMarker != 'X' && playerMarker != 'O') {
+            System.out.println("Invalid marker! Please choose X or O: ");
+            playerMarker = scanner.next().toUpperCase().charAt(0);
+        }
