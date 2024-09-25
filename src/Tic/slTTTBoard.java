@@ -68,3 +68,14 @@ public class slTTTBoard {
                 } else {
                     System.out.println("Player wins! (This should never happen)");
                 }
+                break; // Stop the game when there's a win
+            }
+
+            switchPlayer();
+        }
+
+        if (!checkForWin() && isBoardFull()) {
+            System.out.println("It's a draw!");
+        }
+        return 0; // Game finished
+    }
