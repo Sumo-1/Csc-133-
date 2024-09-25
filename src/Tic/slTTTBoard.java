@@ -146,3 +146,24 @@ public class slTTTBoard {
             playRandom();
         }
     }
+    // Play a random move (fallback option)
+    public void playRandom() {
+        Random rand = new Random();
+        int row, col;
+        do {
+            row = rand.nextInt(3);  // Random row (0-2)
+            col = rand.nextInt(3);  // Random column (0-2)
+        } while (board[row][col] != '-');
+        board[row][col] = computerMarker; // Computer places its marker
+    }
+
+    private boolean isBoardFull() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board[i][j] == '-') {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
