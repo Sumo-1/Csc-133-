@@ -167,3 +167,20 @@ public class slTTTBoard {
         }
         return true;
     }
+
+    private void switchPlayer() {
+        currentPlayerMarker = (currentPlayerMarker == playerMarker) ? computerMarker : playerMarker;
+    }
+
+    private boolean checkForWin() {
+        return checkRows() || checkColumns() || checkDiagonals();
+    }
+
+    private boolean checkRows() {
+        for (int i = 0; i < 3; i++) {
+            if (board[i][0] == currentPlayerMarker && board[i][1] == currentPlayerMarker && board[i][2] == currentPlayerMarker) {
+                return true;
+            }
+        }
+        return false;
+    }
