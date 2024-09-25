@@ -184,3 +184,18 @@ public class slTTTBoard {
         }
         return false;
     }
+
+    private boolean checkColumns() {
+        for (int i = 0; i < 3; i++) {
+            if (board[0][i] == currentPlayerMarker && board[1][i] == currentPlayerMarker && board[2][i] == currentPlayerMarker) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean checkDiagonals() {
+        return (board[0][0] == currentPlayerMarker && board[1][1] == currentPlayerMarker && board[2][2] == currentPlayerMarker) ||
+                (board[0][2] == currentPlayerMarker && board[1][1] == currentPlayerMarker && board[2][0] == currentPlayerMarker);
+    }
+}
