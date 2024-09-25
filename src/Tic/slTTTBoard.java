@@ -108,3 +108,22 @@ public class slTTTBoard {
         // Third: Make any available move that leads to a draw
         playStrategically();
     }
+
+    // Try to make a winning move for the given marker
+    private boolean makeWinningMove(char marker) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board[i][j] == '-') {
+                    board[i][j] = marker; // Try the move
+                    if (checkForWin()) {
+                        if (marker == playerMarker) {
+                            board[i][j] = '-'; // Undo the move if it's for blocking player
+                        }
+                        return true; // Move made for win or block
+                    }
+                    board[i][j] = '-'; // Undo the move if it's not winning
+                }
+            }
+        }
+        return false;
+    }
