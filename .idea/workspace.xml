@@ -1,29 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a81c241-433d-4a95-9bf3-744681fe4ed7" name="Changes" comment="" />
+    <list default="true" id="2a81c241-433d-4a95-9bf3-744681fe4ed7" name="Changes" comment="Merge remote-tracking branch 'assignment3/main'">
+      <change beforePath="$PROJECT_DIR$/src/pkgSlUtils/siWindowManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pkgSlUtils/siWindowManager.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2nBYhrvIySpLaK2aih4RS7qINKL" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.csc133Driver.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "D:/Sac state/csc 133/Assignment 3/assignment3/src/Main.java"
   }
@@ -37,17 +63,112 @@
       <option name="presentableId" value="Default" />
       <updated>1728448061399</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1728448299192</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1728448299192</updated>
+    </task>
+    <task id="LOCAL-00002" summary="driver code">
+      <option name="closed" value="true" />
+      <created>1728448329813</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1728448329813</updated>
+    </task>
+    <task id="LOCAL-00003" summary="siRenderEngine">
+      <option name="closed" value="true" />
+      <created>1728448414643</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1728448414643</updated>
+    </task>
+    <task id="LOCAL-00004" summary="siRenderEngine">
+      <option name="closed" value="true" />
+      <created>1728448454642</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1728448454642</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Merge remote-tracking branch 'assignment3/main'">
+      <option name="closed" value="true" />
+      <created>1728448477997</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1728448477997</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Merge remote-tracking branch 'assignment3/main'">
+      <option name="closed" value="true" />
+      <created>1728448491228</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1728448491228</updated>
+    </task>
+    <task id="LOCAL-00007" summary="siWindowManager">
+      <option name="closed" value="true" />
+      <created>1728448559791</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1728448559791</updated>
+    </task>
+    <task id="LOCAL-00008" summary="siWindowManager1">
+      <option name="closed" value="true" />
+      <created>1728448579735</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1728448579735</updated>
+    </task>
+    <task id="LOCAL-00009" summary="siWindowManager1">
+      <option name="closed" value="true" />
+      <created>1728448590149</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1728448590149</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Merge remote-tracking branch 'assignment3/main'">
+      <option name="closed" value="true" />
+      <created>1728448611080</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1728448611080</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Merge remote-tracking branch 'assignment3/main'">
+      <option name="closed" value="true" />
+      <created>1728448627754</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1728448627754</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Merge remote-tracking branch 'assignment3/main'">
+      <option name="closed" value="true" />
+      <created>1728448642072</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1728448642072</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="driver code" />
+    <MESSAGE value="siRenderEngine" />
+    <MESSAGE value="siWindowManager" />
+    <MESSAGE value="siWindowManager1" />
+    <MESSAGE value="Merge remote-tracking branch 'assignment3/main'" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'assignment3/main'" />
   </component>
 </project>
