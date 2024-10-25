@@ -28,3 +28,23 @@ public class siWindowManager {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
     }
+    // Set the rendering panel
+    public void setRenderPanel(JPanel panel) {
+        this.renderPanel = panel;
+        window.add(panel);
+        window.revalidate();
+    }
+    // Start a simple render loop
+    public void startRenderLoop(int frameDelay) {
+        // Use a Timer to trigger repaint events (simple render loop)
+        Timer timer = new Timer(frameDelay, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (renderPanel != null) {
+                    renderPanel.repaint();
+                }
+            }
+        });
+        timer.start();
+    }
+}
