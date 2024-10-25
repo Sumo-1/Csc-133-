@@ -20,7 +20,6 @@ public class siWindowManager {
         }
         return instance;
     }
-
     // Initialize the Swing window
     public void initWindow(int width, int height, String title) {
         // Create the main window
@@ -36,9 +35,9 @@ public class siWindowManager {
         window.revalidate();
     }
     // Start a simple render loop
-    public void startRenderLoop() {
+    public void startRenderLoop(int frameDelay) {
         // Use a Timer to trigger repaint events (simple render loop)
-        Timer timer = new Timer(16, new ActionListener() {
+        Timer timer = new Timer(frameDelay, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (renderPanel != null) {
